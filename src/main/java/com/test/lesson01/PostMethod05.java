@@ -31,6 +31,7 @@ public class PostMethod05 extends HttpServlet {
 		out.print("<tr><th>생년월일</th><td>" + birth + "</td></tr>");
 		out.print("<tr><th>이메일</th><td>" + email + "</td></tr>");
 		out.print("테스트");
+		out.print("노트북 테스트");
 		out.print("</table></body></html>");
 
 	}
