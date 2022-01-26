@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/servlet/quiz10")
 public class PostMethodQuiz10 extends HttpServlet {
-
+	//이슈 테스트를 위한 주석 추가
+	
+	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setCharacterEncoding("utf-8");
