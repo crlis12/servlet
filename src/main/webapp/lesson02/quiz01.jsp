@@ -11,17 +11,16 @@
 <body>
 
 	<%!//1번
-	public int sumF() {
-		int N = 50;
+	public int getSum(int n) {
 		int sum = 0;
-		for (int i = 1; i <= N; i++) {
+		for (int i = 1; i <= n; i++) {
 			sum += i;
 		}
 		return sum;
 	}%>
 	<h1>
 		1부터 50까지의 합은
-		<%=sumF()%>
+		<%=getSum(50)%>
 		입니다.
 	</h1>
 
@@ -33,7 +32,7 @@
 	for (int i = 0; i < scores.length; i++) {
 		sum += scores[i];
 	}
-	avg = (double) sum / (double) scores.length;
+	avg = (double) sum / scores.length;
 	%>
 
 	<h1>
@@ -43,6 +42,7 @@
 	</h1>
 
 	<%
+	
 	List<String> scoreList = Arrays.asList(new String[] { "X", "O", "O", "O", "X", "O", "O", "O", "X", "O" });
 	int score = 0;
 	for (int i = 0; i < scoreList.size(); i++) {
@@ -63,7 +63,7 @@
 	String birthDay = "20010820";
 
 	String year = birthDay.substring(0, 4);
-
+// 	out.print(year);
 	int age = 2022 - Integer.parseInt(year);
 	%>
 	<h1><%=birthDay%>의 나이는
