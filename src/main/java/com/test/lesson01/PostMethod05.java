@@ -34,6 +34,7 @@ public class PostMethod05 extends HttpServlet {
 		out.print("노트북 테스트");
 		out.print("</table></body></html>");
 
+		
 	}
 
 }
