@@ -17,7 +17,7 @@
 		 <input type="text" name="hobby"><br><br>
 		 
 		 3. 강아지 or 고양이
-		 <label>강아지<input type="radio" name="animal" value="dog"></label>
+		 <label>강아지<input type="radio" name="animal" value="dog" checked></label>
 		 <label>고양이<input type="radio" name="animal" value="cat"></label><br><br>
 		 
 		 4. 다음 중 선호하는 것을 모두 고르세요<br>
