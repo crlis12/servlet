@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%@page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,20 +15,35 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-<title>배탈의 민족</title>
+<title>장보기 목록</title>
 </head>
 <body>
-	<div class=container>
-		<h1>메뉴 검색</h1>
-		<form method="post" action="/lesson02/quiz07_1.jsp">
-			<div class="d-flex">
-				<input type="text" class="form-control col-3" name="menu" placeholder="메뉴를 입력하세요">
-				<label><input type="checkbox" class="mt-3 ml-2" name="check" value="fourdown">4점 이하 제외</label>
-			</div>
-			<button type="submit" class="btn btn-success mt-3"> 검색</button>
-		</form>
+	<div class="container text-center">
+	<h1>장보기 목록</h1>
+	<table class="table">
+		<thead>
+				<th>번호</th>
+				<th>목록</th>
+		</thead>
+	<%
+		List<String> goodsList = Arrays.asList(new String[]{ 
+		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+		});
 	
-	
-	</div>	
+		for(int i = 0; i<goodsList.size();i++){
+	%>
+		<tr>
+			<td><%= i+1 %></td>
+			<td><%=goodsList.get(i)%></td>
+		</tr>
+		
+	<%
+		}
+	%>
+	</table>
+	</div>
+		
+
+
 </body>
 </html>
