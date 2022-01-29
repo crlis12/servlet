@@ -55,7 +55,7 @@
 					out.print("<td>" + list.get(i).get("name") + "</td>" );	
 					out.print("<td>" + list.get(i).get("point") + "</td>");
 		    	}
-// 		    	int number = Integer.parseInt(list.get(i).get("point").toString());
+// 		    	int number = Integer.parseInt(list.get(i).get("point").toString()); object형을 int형으로 변환 
 // 				out.print(number);
 			%>
 			</tr>
