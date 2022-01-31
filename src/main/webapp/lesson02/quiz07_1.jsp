@@ -30,10 +30,10 @@
 			
 			<tr>
 			<%
-			String menu = request.getParameter("menu");
-			String check = request.getParameter("check");
+			String menu = request.getParameter("menu"); // 검색창에 입력된 menu값 가져오기
+			String check = request.getParameter("check"); // 체크 박스 조건 값들 가져오기
 			
-			List<Map<String, Object>> list = new ArrayList<>();
+			List<Map<String, Object>> list = new ArrayList<>();  //데이터들
 		    Map<String, Object> map = new HashMap<String, Object>() {{ put("name", "버거킹"); put("menu", "햄버거"); put("point", 4.3); } };
 		    list.add(map);
 		    map = new HashMap<String, Object>() {{ put("name", "BBQ"); put("menu", "치킨"); put("point", 3.8); } };
@@ -51,12 +51,18 @@
 		    
 		    for(int i =0; i < list.size();i++){
 		    	if(menu.equals(list.get(i).get("menu"))){
+		    		if(check != null){	// 4점 이하 별점들은 제외 체크박스가 체크 되었을 때
+						if((double)list.get(i).get("point") <= 4.0){ // double형으로으로 형변환을 해준다.
+							continue;		
+						}
+					}
 					out.print("<td>" + list.get(i).get("menu") + "</td>" );		    		
 					out.print("<td>" + list.get(i).get("name") + "</td>" );	
 					out.print("<td>" + list.get(i).get("point") + "</td>");
 		    	}
 // 		    	int number = Integer.parseInt(list.get(i).get("point").toString()); object형을 int형으로 변환 
 // 				out.print(number);
+				
 			%>
 			</tr>
 			<%
