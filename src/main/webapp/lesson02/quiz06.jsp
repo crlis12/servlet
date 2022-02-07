@@ -19,28 +19,29 @@
 </head>
 <body>
 	<div class="container text-center">
-	<h1>장보기 목록</h1>
-	<table class="table">
-		<thead>
-				<th>번호</th>
-				<th>목록</th>
-		</thead>
-	<%
-		List<String> goodsList = Arrays.asList(new String[]{ 
-		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
-		});
-	
-		for(int i = 0; i<goodsList.size();i++){
-	%>
-		<tr>
-			<td><%= i+1 %></td>
-			<td><%=goodsList.get(i)%></td>
-		</tr>
+		<h1>장보기 목록</h1>
+		<table class="table">
+			<thead>
+					<th>번호</th>
+					<th>품목</th>
+			</thead>
+			<tbody>
+		<%
+			List<String> goodsList = Arrays.asList(new String[]{ 
+			    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+			});
 		
-	<%
-		}// for문 괄호 닫기
-	%>
-	</table>
+			for(int i = 0; i<goodsList.size();i++){
+		%>
+			<tr>
+				<td><%= i+1 %></td>
+				<td><%=goodsList.get(i)%></td>
+			</tr>
+		<%
+			}// for문 괄호 닫기
+		%>
+			</tbody>
+		</table>
 	</div>
 		
 
