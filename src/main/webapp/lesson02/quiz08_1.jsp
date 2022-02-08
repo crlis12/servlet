@@ -80,7 +80,7 @@
 		<div class="d-flex">
 			<img src="<%=target.get("image") %>" alt="표지" width="300px">
 			<div>
-				<div></div>
+				<div class="display-1 font-weight-bold d-block"><%=target.get("title") %></div>
 				<div></div>
 				<div></div>
 			</div>
