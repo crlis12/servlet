@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
 
 
 <%
@@ -53,7 +53,8 @@ musicInfo.put("id", 4);
 musicInfo.put("title", "삐삐");
 musicInfo.put("album", "삐삐");
 musicInfo.put("singer", "아이유");
-musicInfo.put("thumbnail", "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/111/535/81111535_1539157728291_1_600x600.JPG");
+musicInfo.put("thumbnail",
+		"https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/111/535/81111535_1539157728291_1_600x600.JPG");
 musicInfo.put("time", 194);
 musicInfo.put("composer", "이종훈");
 musicInfo.put("lyricist", "아이유");
@@ -64,7 +65,8 @@ musicInfo.put("id", 5);
 musicInfo.put("title", "스물셋");
 musicInfo.put("album", "CHAT-SHIRE");
 musicInfo.put("singer", "아이유");
-musicInfo.put("thumbnail", "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/724/877/80724877_1445520704274_1_600x600.JPG");
+musicInfo.put("thumbnail",
+		"https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/724/877/80724877_1445520704274_1_600x600.JPG");
 musicInfo.put("time", 194);
 musicInfo.put("composer", "아이유,이종훈,이채규");
 musicInfo.put("lyricist", "아이유");
@@ -75,59 +77,72 @@ musicInfo.put("id", 6);
 musicInfo.put("title", "Blueming");
 musicInfo.put("album", "Love poem");
 musicInfo.put("singer", "아이유");
-musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/6/65/%EC%95%84%EC%9D%B4%EC%9C%A0_-_Love_poem.jpg");
+musicInfo.put("thumbnail",
+		"https://upload.wikimedia.org/wikipedia/ko/6/65/%EC%95%84%EC%9D%B4%EC%9C%A0_-_Love_poem.jpg");
 musicInfo.put("time", 217);
 musicInfo.put("composer", "아이유,이종훈,이채규");
 musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
-
 %>
 
 
 <%
-	String singName = request.getParameter("title"); 
-
+String singName = request.getParameter("title");
+String search = request.getParameter("search");
 %>
-
+<h3>곡정보</h3>
 <section class="content1">
 	<div class=d-flex>
-		
-		
 		<div>
-			
 			<%
-			for(Map<String , Object> songInfo : musicList){
-				if(songInfo.get("title").equals(singName) == false){
+			for (Map<String, Object> songInfo : musicList) {
+				
+				
+				
+				if (songInfo.get("title").equals(singName) == false) {
 					continue;
 				}
-				int timeM = (int)songInfo.get("time") / 60;
-				int timea = (int)songInfo.get("time") % 60;
+				
+				int timeM = (int) songInfo.get("time") / 60;
+				int timea = (int) songInfo.get("time") % 60;
 			%>
-			
 			<div class="d-flex">
 				<div>
-					<img src="<%=songInfo.get("thumbnail") %>" alt="앨범표지" width="150px" height="150px" class="m-2">
+					<img src="<%=songInfo.get("thumbnail")%>" alt="앨범표지" width="150px" height="150px" class="m-2">
 				</div>
-				<div class="font-weight-bold m-3">
-					<h3><%=songInfo.get("title") %></h3><br>
-					앨범 <%=songInfo.get("album") + "\t" %> <br>
-					재생시간 <%=timeM %> : <%=timea %> <br>
-					작곡가:<%=songInfo.get("composer") %><br>
-					작사가:<%=songInfo.get("singer") %><br>
+				<div>
+					
+				</div>
+				<div class="text-secondary">
+					<h3 class="m-2"><%=songInfo.get("title")%></h3>
+					<div class="d-flex font-weight-bold m-5">
+						<div>
+							앨범<br>
+							재생시간:<br>
+							작곡가:<br>
+							작사가:<br>
+						</div>
+						<div>
+							<%=songInfo.get("album") + "\t"%><br>
+							<%=timeM%> : <%=timea%><br>
+							<%=songInfo.get("composer")%><br>
+							<%=songInfo.get("singer")%><br>
+						</div>
+					</div>
 				</div>
 			</div>
-			
+
 			<%
-				}
-			%>			
+			}
+			%>
 		</div>
 	</div>
 	<div>
-		<h2 class="foont-weight-bold mt-3" >가사</h2>
+		<h2 class="foont-weight-bold mt-3">가사</h2>
 		<hr>
 		<span class="font-weight-bold m-2 mb-4">가사정보없음</span>
 		<hr>
 	</div>
-	<jsp:include page="footer.jsp"/>
-	
+
+
 </section>

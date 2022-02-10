@@ -22,6 +22,9 @@
 			border: 3px solid green;
 			height: 200px;
 		}
+		header{
+			height: 40px;
+		}
 	
 	</style>
 
@@ -32,7 +35,6 @@
 			<jsp:include page="nav.jsp"/>
 			<jsp:include page="content1.jsp"></jsp:include>
 			<jsp:include page="content2.jsp"></jsp:include>
-			<section class="content2"></section>
 			<jsp:include page="footer.jsp"/>
 		</div>
 </body>
