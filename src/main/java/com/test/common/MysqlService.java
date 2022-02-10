@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MysqlService {
-
+	
 	private static MysqlService mysqlService = null;
 
-	private String url = "jdbc:mysql//localhost:3306/boram_211118"; // DB서버 주소 도메인 뒤에 접속할 데이터 베이스명까지 적는다.
+	private String url = "jdbc:mysql://localhost:3306/boram_211118"; // DB서버 주소 도메인 뒤에 접속할 데이터 베이스명까지 적는다.
 	private String id = "root"; // 아이디
 	private String pw = "root"; // 비밀번호 본인이 설정한 DB 비번
 
