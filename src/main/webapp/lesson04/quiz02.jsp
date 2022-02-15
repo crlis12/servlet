@@ -19,11 +19,15 @@
 	<div class="container">
 		<h1>즐겨찾기 추가</h1>
 		<form method="get" action="/lesson04/favorites_insert">
-			<b>사이트명:</b>
-			<input type="text" class="form-control col-3" name="site" > 
-			<b>사이트 주소:</b>
-			<input type="text" class="form-control col-6" name="url" >
-			<button type="submit" class="btn btn-success">추가</button>
+			<div class="form group">
+				<b>사이트명:</b>
+				<input type="text" class="form-control col-3" name="site" > 
+			</div>
+			<div class="form group mt-3">
+				<b>사이트 주소:</b>
+				<input type="text" class="form-control col-6" name="url" >
+			</div>
+				<button type="submit" class="btn btn-success mt-3">추가</button>
 		</form>
 	</div>
 </body>

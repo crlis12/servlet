@@ -31,6 +31,7 @@
 
 
 	<div class="container">
+		<h1 class="text-center">즐겨찾기 목록</h1>
 		<table class="table text-center">
 			<thead>
 				<tr>
@@ -48,7 +49,7 @@
 				<tr>
 					<td><%=result.getString("name") %></td>
 					<td><a href="<%=result.getString("url") %>" target="_blank"><%=result.getString("url") %></a></td>
-					<td><a href="/lesson04/favorites_delete?id=<%=result.getInt("id") %>">삭제하기</a></td>
+					<td><a class="btn btn-danger" href="/lesson04/favorites_delete?id=<%=result.getInt("id") %>">삭제하기</a></td>
 				<tr>
 			<%
 				}
@@ -57,5 +58,10 @@
 		</table>
 	
 	</div>
+	
+	<%
+		//DB연결 해제
+		mysql.disconnection();
+	%>
 </body>
 </html>

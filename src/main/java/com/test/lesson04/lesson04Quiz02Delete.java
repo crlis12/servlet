@@ -26,10 +26,10 @@ public class lesson04Quiz02Delete extends HttpServlet {
 		try {
 			mysqlService.update(deleteQuery);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch blocka
 			e.printStackTrace();
 		}
-		
+				
 		mysqlService.disconnection();
 		
 		response.sendRedirect("/lesson04/quiz02_1.jsp");
